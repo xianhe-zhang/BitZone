@@ -32,7 +32,7 @@ const PlaceItem = props => {
     setShowConfirmModal(false);
     try {
       await sendRequest(
-        process.env.REACT_APP_BACKEND_URL + `/places/${props.id}`,
+        `http://localhost:5000/api/places/${props.id}`,
         'DELETE',
         null,
         {
@@ -84,7 +84,7 @@ const PlaceItem = props => {
           {isLoading && <LoadingSpinner asOverlay />}
           <div className="place-item__image">
             <img
-              src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}
+              src={`http://localhost:5000/${props.image}`}
               alt={props.title}
             />
           </div>
